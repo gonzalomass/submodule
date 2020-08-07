@@ -49,6 +49,7 @@ jobs:
     # Update, commit, and push
     - name: Update, commit and push
       run: |
+        cd main
         git submodule update --remote
         ls -la
         git add .
