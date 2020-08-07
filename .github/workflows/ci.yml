@@ -40,7 +40,10 @@ jobs:
     - name: Checkout parent repo
       uses: actions/checkout@v2
       with:
-        submodules: true
+        repository: gonzalomass/parent
+        ref: staging
+        token: ${{ secrets.PAT }} # `GitHub_PAT` is a secret that contains your PAT
+        path: main
         
     # Update, commit, and push
     - name: Update, commit and push
