@@ -10,7 +10,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  submodules sync:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -28,20 +28,13 @@ jobs:
         token: ${{ secrets.PAT }} # `GitHub_PAT` is a secret that contains your PAT
         path: main
         submodules: true
-        run: |
-          date > generated.txt
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
 
-    # Runs a single command using the runners shell
+    # Commit and push
     - name: Run a one-line script
-      run: echo Hello, world!
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        date > generated.txt
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "generated"
+        git push
