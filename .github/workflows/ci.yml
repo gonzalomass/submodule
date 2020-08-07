@@ -19,19 +19,20 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     # - uses: actions/checkout@v2
 
-    # Remote repo submodules pull
-    - name: Checkout private tools
+    # Checkout parent repo
+    - name: Checkout parent repo
       uses: actions/checkout@v2
       with:
         repository: gonzalomass/parent
         ref: staging
         token: ${{ secrets.PAT }} # `GitHub_PAT` is a secret that contains your PAT
         path: main
-        submodules: true
 
     # Commit and push
-    - name: Run a one-line script
+    - name: Commit and push
       run: |
+        cd main
+        ls -la
         date > generated.txt
         git config user.name github-actions
         git config user.email github-actions@github.com
