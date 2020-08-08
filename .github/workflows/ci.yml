@@ -26,6 +26,10 @@ jobs:
         path: main
         submodules: true
     
+    # Get commit message
+    - name: Get commit message
+      run: echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
+
     # Update submodule
     - name: Update submodule
       run: |
@@ -38,5 +42,5 @@ jobs:
         git pull origin staging --rebase
         cd ..
         git add sub
-        git commit -m github.event.head_commit.message
+        git commit -m env.commitmsg
         git push
