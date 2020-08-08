@@ -31,14 +31,14 @@ jobs:
 
     # Config - set submodule to staging branch - update, commit, and push
     # git submodule update --remote --merge
+    # git pull origin HEAD:staging --rebase
     - name: Config - set submodule to staging branch
       run: |
         cd main/submodule
         git config user.name github-actions
         git config user.email github-actions@github.com
         git config -f .gitmodules submodule.submodule.branch staging
-        git pull origin HEAD:staging --rebase
-        git submodule update --progress --remote --merge
+        git submodule update --progress --merge
         git config -f .gitmodules submodule.submodule.branch master
         git add .
         git commit -m "generated"
