@@ -38,7 +38,7 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         git config -f .gitmodules submodule.submodule.branch staging
-        git pull origin staging --rebase
+        git pull origin staging
         git config -f .gitmodules submodule.submodule.branch master
         git add .
         git commit -m "generated"
