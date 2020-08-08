@@ -43,6 +43,7 @@ jobs:
         git fetch
         git checkout -b staging
         git pull origin staging --rebase
-        git add .
+        cd ..
+        git add sub
         git commit -m "generated"
-        git push origin staging
+        git push
