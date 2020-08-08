@@ -41,4 +41,4 @@ jobs:
         git config -f .gitmodules submodule.submodule.branch master
         git add .
         git commit -m "generated"
-        git push
+        git push origin HEAD:staging
