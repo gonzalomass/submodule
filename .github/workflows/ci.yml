@@ -30,7 +30,7 @@ jobs:
     - name: Get commit message
       run: |
         cd main
-        echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
+        echo ::set-env name=commitmsg::${{ github.event.head_commit.message }}
 
     # Update submodule
     - name: Update submodule
