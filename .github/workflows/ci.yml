@@ -36,8 +36,8 @@ jobs:
     # git config -f .gitmodules submodule.submodule.branch master
     - name: Config - set submodule to staging branch
       run: |
-        git --global config user.name github-actions
-        git --global config user.email github-actions@github.com
+        git config --global user.name github-actions
+        git config --global user.email github-actions@github.com
         cd main/sub
         git remote update
         git fetch
