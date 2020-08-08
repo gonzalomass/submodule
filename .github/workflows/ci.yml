@@ -43,5 +43,5 @@ jobs:
         git pull origin staging --rebase
         cd ..
         git add sub
-        git commit -m $commitmsg
+        git commit -m "$commitmsg"
         git push
