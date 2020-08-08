@@ -41,7 +41,7 @@ jobs:
         git config user.email github-actions@github.com
         git remote update
         git fetch
-        git pull origin staging --rebase
+        git pull origin HEAD:staging --rebase
         git add .
         git commit -m "generated"
         git push origin staging --rebase
