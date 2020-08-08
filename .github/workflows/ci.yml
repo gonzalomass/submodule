@@ -39,7 +39,7 @@ jobs:
         git config user.email github-actions@github.com
         git config -f .gitmodules submodule.submodule.branch stagings
         rm -rf submodule
-        git submodule update --checkout --remote --merge
+        git submodule sync -- submodule
         git config -f .gitmodules submodule.submodule.branch master
         git add .
         git commit -m "generated"
