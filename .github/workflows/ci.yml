@@ -36,7 +36,7 @@ jobs:
     # git config -f .gitmodules submodule.submodule.branch master
     - name: Config - set submodule to staging branch
       run: |
-        cd main
+        cd main/sub
         git config user.name github-actions
         git config user.email github-actions@github.com
         git pull origin staging --rebase
