@@ -25,12 +25,6 @@ jobs:
         token: ${{ secrets.PAT }}
         path: main
         submodules: true
-    
-    # Get commit message
-    - name: Get commit message
-      run: |
-        cd main
-        echo ::set-env name=commitmsg::${{ github.event.head_commit.message }}
 
     # Update submodule
     - name: Update submodule
@@ -44,5 +38,5 @@ jobs:
         git pull origin staging --rebase
         cd ..
         git add sub
-        git commit -m ${{ github.event.head_commit.message }}
+        git commit -m "${{ github.event.head_commit.message }}"
         git push
