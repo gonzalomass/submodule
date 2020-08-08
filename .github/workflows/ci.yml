@@ -31,7 +31,7 @@ jobs:
 
     # Config - set submodule to staging branch - update, commit, and push
     # git submodule update --remote --merge
-    # git pull origin HEAD:staging --rebase
+    # git pull origin staging --rebase
     # git config -f .gitmodules submodule.submodule.branch staging
     # git config -f .gitmodules submodule.submodule.branch master
     - name: Config - set submodule to staging branch
@@ -45,4 +45,4 @@ jobs:
         git pull origin staging --rebase
         git add .
         git commit -m "generated"
-        git push
+        git push origin staging --rebase
