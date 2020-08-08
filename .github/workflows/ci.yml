@@ -37,6 +37,7 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         git config -f .gitmodules submodule.submodule.branch staging
+        git pull origin HEAD:staging
         git submodule update --progress --remote --merge
         git config -f .gitmodules submodule.submodule.branch master
         git add .
