@@ -3,7 +3,7 @@
  */
 
 // Show search bar for desktop
-$( '.search-form__submit').click( function( event ) {
+$( '.search-form__submit' ).click( function( event ) {
 	if ( ! $( '.search-form__field' ).hasClass( 'active' ) && 768 <= $( document ).width() ) {
 		event.preventDefault();
 		let menuWidth = $( '#main-menu' ).width();
