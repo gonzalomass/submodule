@@ -1,4 +1,4 @@
-name: CI
+name: Staging CD
 
 on:
   push:
