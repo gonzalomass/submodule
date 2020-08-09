@@ -1,0 +1,301 @@
+//
+// Site Header
+//------------------------------------
+.site-header {
+  position: relative;
+  z-index: 2;
+
+  //
+  // Site Header - Navbar
+  //------------------------------------
+  &__navbar {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 55px;
+    padding: 1.5rem 1.5rem 2rem;
+
+    @include media-breakpoint-up(md) {
+      min-height: 85px;
+      padding: 2rem 1rem;
+    }
+  }
+
+  //
+  // Site Header - Custom Container
+  //------------------------------------
+  &__custom-container {
+    max-width: 132rem;
+  }
+
+  //
+  // Site Header - Logo
+  //------------------------------------
+  &__custom-logo {
+    width: var(--header_logo_mobile_width, 93px);
+    min-width: var(--header_logo_mobile_width, 93px);
+
+    @include media-breakpoint-up(md) {
+      width: var(--header_logo_desktop_width, 160px);
+      min-width: var(--header_logo_desktop_width, 160px);
+    }
+  }
+
+  //
+  // Site Header - Main Menu
+  //------------------------------------
+  @keyframes show-menu {
+    0% {
+      opacity: 0;
+      flex: 0 0 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    50% {
+      opacity: 0;
+      flex: 0 0 0;
+      width: 0;
+      overflow: hidden;
+    }
+
+    100% {
+      flex: 1 0 100%;
+      width: 100%;
+      overflow: visible;
+    }
+  }
+
+  @keyframes hide-menu {
+    0% {
+      opacity: 1;
+      flex: 1 0 100%;
+      width: 0;
+      overflow: hidden;
+      display: flex;
+    }
+
+    100% {
+      opacity: 0;
+      flex: 0 0 0;
+      width: 0;
+      overflow: hidden;
+      display: none;
+    }
+  }
+
+  &__main-menu {
+    @include media-breakpoint-down(sm) {
+      border-top: solid 1px #efefef;
+      margin-top: 1.5rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      flex: 1;
+      justify-content: flex-end;
+      animation: show-menu 1s forwards;
+      animation-timing-function: ease;
+
+      &.search-bar-expandend {
+        animation: hide-menu 0.75s forwards;
+      }
+    }
+
+    // General li.menu-item attributes
+    li.menu-item,
+    li.menu-item.active {
+      @include media-breakpoint-up(md) {
+        font-size: 1.4rem;
+        padding: 0.5rem 2rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        border-bottom: solid 1px #efefef;
+      }
+
+      a.nav-link,
+      a.dropdown-item {
+        @include OpenSansSemiBold();
+
+        font-size: 1.6rem;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $blue-4;
+        white-space: nowrap;
+        text-decoration: none;
+
+        @include media-breakpoint-down(md) {
+          padding: 1rem 0;
+        }
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
+      a.dropdown-toggle {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media-breakpoint-up(md) {
+          justify-content: flex-start;
+        }
+
+        &:after {
+          content: '';
+          background-image: url(~imagesFolder/chevron-down-outline.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 0.6rem;
+          width: 1.1rem;
+          border: none;
+          margin-left: 1rem;
+        }
+
+        &[aria-expanded=true] {
+          &:after {
+            background-image: url(~imagesFolder/chevron-down-outline-blue.svg);
+
+            @include media-breakpoint-down(md) {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    // First level li.menu-item attributes
+    > li.menu-item.show {
+      a.nav-link {
+        color: $blue;
+      }
+
+      // First level ul.dropdown-menu attributes
+      > ul.dropdown-menu.show {
+        box-shadow: none;
+        border: none;
+        padding: 0 0 0 1rem;
+
+        @include media-breakpoint-up(md) {
+          box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.27);
+          border: solid 1px #e3e3e3;
+          border-radius: 1px;
+          column-gap: 4.5rem;
+          max-width: calc(100vw - 3rem);
+          min-width: 100%;
+          padding: 2rem;
+          z-index: 8;
+          margin-top: 1.4rem;
+
+          &:before {
+            content: '';
+            width: 2rem;
+            height: 2rem;
+            box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.27);
+            border: solid 1px #e3e3e3;
+            position: absolute;
+            transform: rotate(135deg);
+            z-index: 9;
+            clip-path: polygon(0% 100%, 0% 0%, 100% 100%);
+            background: #fff;
+            margin-left: var(--pointer-margin-left);
+            top: -1rem;
+          }
+
+          &.dropdown-colums-2 {
+            column-count: 2;
+          }
+
+          &.dropdown-colums-3 {
+            column-count: 3;
+          }
+
+          &.dropdown-colums-4 {
+            column-count: 4;
+          }
+        }
+
+        // Second level li.menu-item attributes
+        > li.menu-item {
+          padding: 0;
+          break-inside: avoid;
+          border-bottom: none;
+          min-width: 215px;
+
+          &.menu-item-has-children {
+            @include media-breakpoint-down(sm) {
+              border-bottom: solid 1px #efefef;
+              margin-bottom: 1.5rem;
+
+              &:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+              }
+            }
+
+            > a.dropdown-item {
+              @include media-breakpoint-up(md) {
+                color: $blue;
+                border-bottom: solid 1px #efefef;
+                padding-bottom: 2rem !important;
+                margin-bottom: 1rem;
+              }
+            }
+          }
+
+          a.dropdown-item {
+            font-size: 1.4rem;
+            padding: 0 0 1.5rem;
+
+            @include media-breakpoint-up(md) {
+              padding: 1rem 0;
+            }
+          }
+
+          // Second level ul.dropdown-menu attributes
+          > ul.dropdown-menu {
+            border: none;
+            display: block;
+            position: relative;
+            padding: 0;
+
+            /// Third level li.menu-item attributes
+            > li.menu-item {
+              padding: 0;
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //
+  // Site Header - Menu Toggler
+  //------------------------------------
+  &__toggler {
+    border: none;
+    padding: 0.5rem;
+    margin-right: -0.5rem;
+    display: flex;
+
+    &.collapsed {
+      .icon {
+        background-image: url(~imagesFolder/menu.svg);
+      }
+    }
+
+    .icon {
+      background-image: url(~imagesFolder/close.svg);
+      width: 1.5rem;
+      height: 1.3rem;
+    }
+  }
+}

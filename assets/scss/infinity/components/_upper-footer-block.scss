@@ -1,0 +1,14 @@
+.upper-footer-block {
+  display: none;
+  padding-top: 5rem;
+
+  &__text {
+    border-bottom: solid 1px $gray-400;
+    color: $gray-700;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 3rem 0;
+    text-align: justify;
+  }
+}

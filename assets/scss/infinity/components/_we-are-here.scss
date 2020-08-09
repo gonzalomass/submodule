@@ -1,0 +1,60 @@
+.we-are-here {
+  padding: 5rem 1.5rem;
+
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
+
+  @include media-breakpoint-down(xs) {
+    background-color: $gray-200;
+    margin: 0 -1.5rem;
+  }
+
+  &__padding {
+    border-radius: 0.5rem;
+    padding: 5rem;
+
+    @include media-breakpoint-down(xs) {
+      background-color: transparent;
+      margin: 0;
+    }
+  }
+
+  &__items {
+    @include media-breakpoint-down(xs) {
+      margin: -1px auto 0;
+      max-width: 20rem;
+    }
+  }
+
+  &__item {
+    background-color: $white;
+    border: solid 1px $gray-400;
+    margin-left: -1px;
+
+    @include media-breakpoint-down(xs) {
+      margin-left: 0;
+      margin-top: -1px;
+    }
+
+    .h5 {
+      line-height: 1.3;
+      margin-bottom: 10%;
+      padding: 0 1rem;
+    }
+  }
+
+  &__icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 10% auto 0;
+    width: 50%;
+
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+}

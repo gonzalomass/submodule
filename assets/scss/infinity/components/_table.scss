@@ -1,0 +1,38 @@
+table {
+  width: 100%;
+
+  th,
+  td {
+    padding: 0.8rem;
+  }
+
+  thead {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  tr {
+    @include media-breakpoint-down(md) {
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  td {
+    @include media-breakpoint-down(md) {
+      border-bottom: 1px solid #ddd;
+      display: flex;
+    }
+
+    &:before {
+      @include media-breakpoint-down(md) {
+        @include OpenSansBold();
+
+        content: attr(label);
+        width: 120px;
+        min-width: 120px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.hero-landing {
+  &__bg {
+    min-height: 573px;
+
+    @include media-breakpoint-down(md) {
+      min-height: inherit !important;
+    }
+  }
+}
+
+.hero-landing-intro {
+  min-height: 573px;
+
+  @include media-breakpoint-down(md) {
+    min-height: inherit !important;
+  }
+}

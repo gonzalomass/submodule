@@ -1,0 +1,30 @@
+.more-information {
+  background: $white;
+
+  @at-root .entry-content & {
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 35rem;
+      margin-left: 3rem;
+      margin-bottom: 1rem;
+      float: right;
+    }
+  }
+
+  &__text {
+    display: none;
+    font-size: 1.5rem;
+    line-height: 1.6;
+
+    @at-root #help-intro & {
+      display: block;
+    }
+  }
+
+  &__list {
+    .btn + .btn {
+      margin-top: 1rem;
+    }
+  }
+}

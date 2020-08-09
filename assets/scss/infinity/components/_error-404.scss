@@ -1,0 +1,29 @@
+.error-404 {
+  margin: 0 auto;
+  max-width: 70rem;
+
+  &__number {
+    color: $secondary;
+    font-size: 6.8rem;
+    display: block;
+
+    @include media-breakpoint-down(md) {
+      font-size: 3rem;
+      padding-top: 0 !important;
+    }
+  }
+
+  &__title {
+    background-color: $secondary;
+    color: $white;
+    padding: 0.5rem;
+  }
+
+  p {
+    padding: 0 2rem;
+
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
+  }
+}

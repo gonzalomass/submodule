@@ -1,0 +1,125 @@
+/*
+	Use this file to overwrite the basic Bootstrap variables
+	and add your own variables
+	To overwrite a Bootstrap variable you don´t have to touch
+	the Bootstrap folder.
+	Just copy a variable from src/sass/bootstrap4/_variables.scss,
+	paste it here and edit the value.
+*/
+
+$white:    #fff !default;
+$gray-100: #fefefe !default; // Shade 6
+$gray-200: #f9f9fa !default; // Shade 5
+$gray-300: #eceff1 !default; // Shade 4
+$gray-400: #dbe3e8 !default; // Shade 3
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #9298a1 !default; // Shade 2
+$gray-800: #1b2d3f !default; // Shade 1
+$gray-900: #2b2b2b !default; // Shade Black
+$black:    #000 !default;
+
+// Tip: To name colors, use http://chir.ag/projects/name-that-color/.
+$blue:        #1d4dcd !default;
+$blue-2:      #163a9c !default;
+$blue-3:      #0e2769 !default;
+$blue-4:      #1a2c41 !default;
+$indigo:      #6610f2 !default;
+$purple:      #6f42c1 !default;
+$pink:        #e83e8c !default;
+$red:         #f44336 !default;
+$orange:      #fd7e14 !default;
+$yellow:      #f0ad4e !default;
+$green:       #19805d !default;
+$green-2:     #d0e9c6 !default;
+$teal:        #20c997 !default;
+$cyan:        #17a2b8 !default;
+$amber:       #ffc107 !default;
+$amber-2:     #e5ad06 !default;
+$amber-3:     #d39f05 !default;
+$anakiwa:     #86ddff !default;
+$dodger:      #2196f3 !default;
+$pomegranate: #f44336 !default;
+$whiskey:     #d1a566 !default;
+
+$primary:       $amber !default;
+$primary-2:     $amber-2 !default;
+$primary-3:     $amber-3 !default;
+$secondary:     $blue !default;
+$secondary-2:   $blue-2 !default;
+$secondary-3:   $blue-3 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$light-200:     $gray-200 !default;
+$light-300:     $gray-300 !default;
+$dark:          $gray-800 !default;
+$alert:         $pomegranate !default;
+$neutral-high:  $whiskey !default;
+
+$theme-colors:
+  (
+    'accent':       $teal,
+    'primary-2':    $primary-2,
+    'primary-3':    $primary-3,
+    'secondary-2':  $secondary-2,
+    'secondary-3':  $secondary-3,
+    'alert':        $alert,
+    'check':        $success,
+    'neutral-high': $neutral-high,
+    'light-300':    $light-300
+  );
+
+$spacer: 1rem !default;
+$spacers:
+  (
+    6: ($spacer * 4),
+    7: ($spacer * 5)
+  );
+
+$yiq-text-dark:             $black !default;
+$yiq-text-light:            $white !default;
+
+$box-shadow-sm:               0 2px 40px 0 rgba(0, 0, 0, 0.05) !default;
+$box-shadow:                  0 2px 40px 0 rgba(0, 0, 0, 0.07) !default;
+$box-shadow-lg:               0 11px 23px 0 rgba(0, 0, 0, 0.09) !default;
+
+$font-size-base: 1.6rem; // To restablish font sizes after: `html { font-size: 62.5%; }` in general.scss
+$link-color: $dodger;
+
+$h1-font-size: $font-size-base * 2.19 !default; // 3.5rem
+$h2-font-size: $font-size-base * 2 !default; // 3.2rem
+$h3-font-size: $font-size-base * 1.56 !default; // 2.5rem
+$h4-font-size: $font-size-base * 1.56 !default; // 2.5rem
+$h5-font-size: $font-size-base * 0.94 !default; // 1.5rem
+
+$headings-line-height: 1.31 !default;
+
+// Links
+$link-decoration: underline !default;
+
+// Components
+$border-radius: 7px !default;
+$border-radius-lg: 7px !default;
+$border-radius-sm: 7px !default;
+
+// Buttons
+$btn-padding-y: 1.3rem !default;
+$btn-padding-x: 4rem !default;
+$btn-padding-y-sm: 1.3rem !default;
+$btn-padding-x-sm: 4rem !default;
+$btn-font-size: 2rem !default;
+$btn-font-size-sm: 1.5rem !default;
+$btn-font-weight: bold !default;
+
+$badge-pill-padding-x: $btn-padding-x;
+
+// Alerts
+$alert-padding-y: 3rem !default;
+$alert-padding-x: 3rem !default;
+
+// Background Icons;
+$chevron-down-bg: url('data:image/svg+xml;utf8,<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+$location-pin-bg: url('data:image/svg+xml;utf8,<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="gray" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>');

@@ -1,0 +1,30 @@
+.hero-landing {
+  position: relative;
+
+  &__bg {
+    background-color: $gray-100;
+    background-image: url(~imagesFolder/bg_image.png);
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    background-size: auto 22.2rem;
+    border-bottom: solid 1px $gray-400;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__sticky {
+    .smartpath {
+      &__container {
+        margin-bottom: -3rem;
+        position: sticky;
+        top: 3rem;
+
+        @include media-breakpoint-down(md) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

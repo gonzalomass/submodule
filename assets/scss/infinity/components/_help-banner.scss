@@ -1,0 +1,86 @@
+.help-banner {
+  background-color: $blue;
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+
+  @include media-breakpoint-down(sm) {
+    background-image: none !important;
+  }
+
+  &.sticky {
+    @include media-breakpoint-down(sm) {
+      bottom: 0;
+      position: sticky;
+    }
+  }
+
+  &__title {
+    h2 {
+      @include media-breakpoint-down(sm) {
+        font-size: 2.2rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        text-align: left;
+      }
+    }
+  }
+
+  &__subtitle {
+    h5 {
+      font-size: 1.8rem;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 1.4;
+        text-align: left;
+      }
+    }
+  }
+
+  &__text {
+    width: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: -11px;
+
+    &:before {
+      @include bootstrap-icon(
+        'data:image/svg+xml,<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/><path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/></svg>',
+        2rem,
+        2rem
+      );
+
+      display: block;
+    }
+
+    &.hide {
+      &:before {
+        height: 0;
+        width: 0;
+      }
+    }
+  }
+
+  &__button {
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    a {
+      @include media-breakpoint-down(sm) {
+        padding-left: 0;
+        padding-right: 0;
+
+        // .btn-block
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

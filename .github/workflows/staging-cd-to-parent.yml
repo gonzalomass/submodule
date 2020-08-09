@@ -1,0 +1,34 @@
+name: Staging CD to parent
+
+on:
+  push:
+    branches: [ staging ]
+
+jobs:
+  staging_cd_to_parent:
+    runs-on: ubuntu-latest
+    steps:
+    # Checkout parent repo
+    - name: Checkout parent repo
+      uses: actions/checkout@v2
+      with:
+        repository: gonzalomass/parent
+        ref: staging
+        token: ${{ secrets.PAT }}
+        path: main
+        submodules: true
+
+    # Update submodule
+    - name: Update submodule
+      run: |
+        git config --global user.name github-actions
+        git config --global user.email github-actions@github.com
+        cd main/sub
+        git remote update
+        git fetch
+        git checkout -b staging
+        git pull origin staging --rebase
+        cd ..
+        git add sub
+        git commit -m "${{ github.event.head_commit.message }}"
+        git push
