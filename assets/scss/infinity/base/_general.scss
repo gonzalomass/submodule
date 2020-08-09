@@ -1,0 +1,36 @@
+
+// GENERAL
+
+//
+// Body
+//------------------------------------
+html {
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+  @include OpenSansRegular();
+
+  color: $dark;
+  font-size: 1.5rem;
+  overflow-x: hidden;
+}
+
+//
+// Alignment
+//------------------------------------
+.alignwide {
+  @media screen and (min-width: 960px) {
+    width: calc(100vw - 3rem) !important;
+    max-width: calc(100vw - 3rem) !important;
+    margin: 0 auto !important;
+    margin-left: calc(50% - 50vw + 1.5rem) !important;
+  }
+}
+
+.alignfull {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 auto !important;
+  margin-left: calc(50% - 50vw) !important;
+}

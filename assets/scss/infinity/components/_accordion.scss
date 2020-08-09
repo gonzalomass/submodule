@@ -1,0 +1,114 @@
+.theme-accordion {
+  &__card {
+    border: none;
+    border-bottom: 1px solid $gray-300 !important;
+    border-radius: 0;
+
+    .card-header {
+      background-color: transparent;
+      border-bottom: none;
+      padding: 0;
+
+      h5 {
+        @include robotoBlack();
+
+        margin: 0 !important;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none !important;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    color: #272727;
+    display: flex !important;
+    padding: 2rem;
+    padding-right: 0 !important;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    align-items: center;
+
+    @include media-breakpoint-down(md) {
+      padding: 1rem 0;
+    }
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:before {
+      background-size: 2rem !important;
+      border: solid 2px $secondary;
+      border-radius: 50%;
+      content: '';
+      display: block;
+      left: 0;
+      height: 3rem;
+      width: 3rem;
+      min-width: 3rem;
+      margin-right: 2rem;
+
+      @include bootstrap-icon(
+        'data:image/svg+xml,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><style type="text/css">.st0{fill:none;stroke:#1D4DCD;stroke-width:32;stroke-linecap:round;stroke-linejoin:round;}</style><title>ionicons-v5-e</title><line class="st0" x1="400" y1="256" x2="112" y2="256"/></svg>',
+        3rem,
+        3rem
+      );
+
+      @include media-breakpoint-down(md) {
+        @include bootstrap-icon(
+          'data:image/svg+xml,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><style type="text/css">.st0{fill:none;stroke:#1D4DCD;stroke-width:32;stroke-linecap:round;stroke-linejoin:round;}</style><title>ionicons-v5-e</title><line class="st0" x1="400" y1="256" x2="112" y2="256"/></svg>',
+          2rem,
+          2rem
+        );
+
+        margin-right: 1rem;
+        min-width: 2rem;
+        margin-top: 0;
+      }
+    }
+
+    &.collapsed {
+      &:before {
+        min-width: 3rem;
+
+        @include bootstrap-icon(
+          'data:image/svg+xml,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><style type="text/css">	.st0{fill:none;stroke:#1D4DCD;stroke-width:32;stroke-linecap:round;stroke-linejoin:round;}</style><title>ionicons-v5-a</title><line class="st0" x1="256" y1="112" x2="256" y2="400"/><line class="st0" x1="400" y1="256" x2="112" y2="256"/></svg>',
+          3rem,
+          3rem
+        );
+
+        @include media-breakpoint-down(md) {
+          min-width: 2rem;
+
+          @include bootstrap-icon(
+            'data:image/svg+xml,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><style type="text/css">	.st0{fill:none;stroke:#1D4DCD;stroke-width:32;stroke-linecap:round;stroke-linejoin:round;}</style><title>ionicons-v5-a</title><line class="st0" x1="256" y1="112" x2="256" y2="400"/><line class="st0" x1="400" y1="256" x2="112" y2="256"/></svg>',
+            2rem,
+            2rem
+          );
+        }
+      }
+    }
+  }
+
+  &__up {
+    display: block !important;
+  }
+
+  &__body {
+    padding: 0 7rem 3rem;
+
+    @include media-breakpoint-down(md) {
+      padding: 0 0 3rem;
+    }
+  }
+}

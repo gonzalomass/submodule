@@ -1,0 +1,35 @@
+.help-intro {
+  background-color: $light-200;
+
+  &__upper-title {
+    color: $secondary;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+
+    @include media-breakpoint-down(md) {
+      padding-bottom: 2.5rem;
+    }
+
+    b,
+    strong {
+      font-size: 1.8rem;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}

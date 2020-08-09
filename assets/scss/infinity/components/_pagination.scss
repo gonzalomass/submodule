@@ -1,0 +1,59 @@
+//
+// Pagination
+//------------------------------------
+.pagination {
+  justify-content: center;
+
+  .page-item {
+    .page-link {
+      @include robotoRegular();
+
+      min-width: 4.2rem;
+      height: 4.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      color: #2f281e;
+      border: solid 1px #e3e3e3;
+      font-size: 1.7rem;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+
+      @include media-breakpoint-up(md) {
+        min-width: 7.2rem;
+        height: 7.2rem;
+      }
+
+      &:hover {
+        color: $secondary;
+      }
+
+      &.next {
+        color: $secondary;
+      }
+    }
+
+    &.active {
+      .page-link {
+        color: $secondary;
+      }
+    }
+
+    &:first-child {
+      .page-link {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+
+    &:last-child {
+      .page-link {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+    }
+  }
+}

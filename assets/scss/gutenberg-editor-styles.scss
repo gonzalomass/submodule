@@ -1,0 +1,86 @@
+@import 'main';
+
+/* @import "~bootstrap/scss/bootstrap"; */
+
+/* @import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins"; */
+
+/* @import "~bootstrap/scss/grid"; */
+
+/**
+ $container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+  $breakpoint : $container-max-width;
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+  $name, $width
+)
+ */
+
+// Responsive containers that are 100% wide until a breakpoint
+@each $breakpoint, $container-max-width in $container-max-widths {
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+
+    %responsive-container-#{$breakpoint} {
+      max-width: $container-max-width;
+    }
+
+    @each $name, $width in $grid-breakpoints {
+      @if ($container-max-width > $width or $breakpoint == $name) {
+        /* .container#{breakpoint-infix($name, $grid-breakpoints)} { */
+
+        /* .container#{breakpoint-infix($name, $grid-breakpoints)}.entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+
+					@extend %responsive-container-#{$breakpoint};
+				} */
+
+        .wp-block-columns,
+        .wp-block,
+        .wp-block[data-align='wide'],
+        .wp-block[data-type='core/columns'] {
+          @extend %responsive-container-#{$breakpoint};
+        }
+      }
+    }
+  }
+}
+
+// Buttons
+
+.wp-block-button {
+  &.is-style-outline {
+    .wp-block-button__link {
+      @extend .btn;
+      @extend .btn-outline-primary;
+    }
+  }
+
+  &.btn-lg {
+    .wp-block-button__link {
+      @extend .btn-lg;
+    }
+  }
+
+  &.btn-sm {
+    .wp-block-button__link {
+      @extend .btn-sm;
+    }
+  }
+
+  .wp-block-button__link {
+    @extend .btn;
+    @extend .btn-primary;
+
+    text-decoration: none;
+  }
+}

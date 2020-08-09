@@ -1,0 +1,48 @@
+//
+// Typography Mixins
+// ------------------------------------
+
+@mixin robotoBlack() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+}
+
+@mixin robotoBold() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+@mixin robotoRegular() {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+@mixin OpenSansExtraBold() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+
+@mixin OpenSansBold() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+@mixin OpenSansSemiBold() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+@mixin OpenSansRegular() {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+@mixin bootstrap-icon($svg, $height, $width) {
+  background-image: url($svg);
+  background-repeat: no-repeat;
+  background-size: $height $width;
+  background-position: center;
+  content: '';
+  height: $height;
+  width: $width;
+}

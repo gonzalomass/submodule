@@ -1,0 +1,63 @@
+.states-list {
+  background-color: $gray-200;
+
+  &__alphabet {
+    background-image: url(~imagesFolder/bg_states.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 0 5rem;
+
+    @include media-breakpoint-down(lg) {
+      padding: 0;
+    }
+
+    & > li {
+      margin-bottom: 3rem;
+      padding-left: 7rem;
+      position: relative;
+
+      @include media-breakpoint-down(lg) {
+        padding-left: 5rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__letter {
+      font-size: 3.4rem;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &__item {
+      background-color: $white;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      margin-right: 2rem !important;
+      width: 200px;
+
+      @include media-breakpoint-down(md) {
+        width: 300px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
+
+      a {
+        @include OpenSansBold();
+
+        color: $secondary;
+        display: block;
+        min-height: 50px;
+        font-size: 17px;
+        line-height: 1.59;
+        padding: 1rem;
+      }
+    }
+  }
+}

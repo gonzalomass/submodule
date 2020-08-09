@@ -1,4 +1,4 @@
-name: staging cd to parent
+name: Staging CD to parent
 
 on:
   push:

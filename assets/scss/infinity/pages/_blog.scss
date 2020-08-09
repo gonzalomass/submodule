@@ -1,0 +1,17 @@
+.blog {
+  &__header {
+    padding-top: 4rem;
+  }
+
+  .widget-area {
+    padding-top: 3rem;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 9.5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 11rem;
+    }
+  }
+}

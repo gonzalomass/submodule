@@ -1,0 +1,17 @@
+.widget {
+  & + & {
+    margin-top: 3rem;
+  }
+
+  &-area {
+    padding: 9rem 0 3rem;
+
+    @include media-breakpoint-down(sm) {
+      padding: 3rem 0;
+    }
+
+    @at-root #home-adsense & {
+      padding-top: 0;
+    }
+  }
+}

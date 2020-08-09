@@ -1,0 +1,118 @@
+//
+// Typography
+// ------------------------------------
+
+h1,
+.h1 {
+  @include robotoBlack();
+
+  margin-bottom: 2.5rem;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2.5rem;
+  }
+}
+
+h2,
+.h2 {
+  @include robotoRegular();
+
+  margin-bottom: 1.5rem;
+  line-height: 1.31;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2.5rem;
+  }
+
+  &--big {
+    font-size: 5rem;
+    line-height: 0.92;
+
+    @include media-breakpoint-down(md) {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+h3,
+.h3 {
+  @include robotoBold();
+
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+
+  @include media-breakpoint-down(md) {
+    font-size: 2rem;
+  }
+}
+
+h4,
+.h4 {
+  @include robotoBold();
+
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+
+  @include media-breakpoint-down(md) {
+    font-size: 1.8rem;
+  }
+}
+
+h5,
+.h5 {
+  @include robotoBold();
+
+  margin-bottom: 1.5rem;
+  line-height: 2;
+}
+
+b,
+strong {
+  @include OpenSansBold();
+}
+
+.disclaimer {
+  &__text {
+    font-size: 1.5rem;
+  }
+
+  &__intro {
+    @include OpenSansSemiBold();
+
+    font-size: 1.8rem;
+
+    &--italic {
+      font-style: italic;
+    }
+  }
+}
+
+.has-small-font-size {
+  color: $gray-700;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  line-height: 1.67;
+}
+
+blockquote {
+  @include OpenSansRegular();
+
+  font-size: 1.5rem;
+  font-stretch: normal;
+  font-style: italic;
+  line-height: 1.67;
+  letter-spacing: normal;
+  color: $success;
+  border-left: 0.7rem solid $success;
+  padding-left: 2.3rem;
+}
+
+:not(.wp-block, .block-library-rich-text__tinymce) > blockquote {
+  @include media-breakpoint-up(md) {
+    float: right;
+    max-width: 35rem;
+    margin-left: 2.5rem;
+  }
+}

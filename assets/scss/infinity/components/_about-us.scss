@@ -1,0 +1,20 @@
+.about-us {
+  &__title {
+    font-size: 3.5rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  &__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include media-breakpoint-down(lg) {
+      min-height: 32rem;
+    }
+  }
+}

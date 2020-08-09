@@ -1,0 +1,115 @@
+//
+// Search Form
+//------------------------------------
+.search-form {
+  transition: 1s all ease;
+  background: $white;
+  z-index: 9;
+  position: relative;
+
+  @include media-breakpoint-down(sm) {
+    flex: 1 1 100%;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #efefef;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 4rem;
+    max-width: 38rem;
+
+    &.active {
+      width: 100%;
+    }
+  }
+
+  &__field {
+    @include robotoRegular();
+
+    border-color: #cfcfd4;
+    border-radius: 0.6rem 0 0 0.6rem !important;
+    border-right: none;
+    color: #2c2e30;
+    font-size: 1.3rem;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    padding: 1.9rem 1rem;
+    transition: 0.5s all ease;
+
+    @include media-breakpoint-up(md) {
+      border-radius: 0 !important;
+      border-left: none;
+      flex: 0 0 0% !important;
+      padding: 1.9rem 0;
+      width: 0;
+    }
+
+    &.active {
+      flex: 1 1 0% !important;
+      padding: 1.9rem 1rem;
+      width: 100%;
+    }
+
+    &:focus,
+    &::placeholder {
+      color: #2c2e30;
+    }
+  }
+
+  &__submit,
+  &__close {
+    border: none;
+    background: none;
+    min-width: 4rem;
+    min-height: 4rem;
+    opacity: 1;
+    transition: 0.5s all ease;
+
+    &.active {
+      border: 0.1rem solid #cfcfd4;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__submit {
+    @include bootstrap-icon(
+      'data:image/svg+xml,<svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/></svg>',
+      1.6rem,
+      1.6rem
+    );
+
+    border-radius: 0 0.6rem 0.6rem 0;
+
+    @include media-breakpoint-down(sm) {
+      border: 0.1rem solid #cfcfd4;
+    }
+  }
+
+  &__close {
+    border-radius: 0.6rem 0 0 0.6rem;
+    transition: 0.5 all ease;
+    width: 0;
+    min-width: 0;
+    padding: 0;
+
+    &.active {
+      display: none;
+
+      @include bootstrap-icon(
+        'data:image/svg+xml,<svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/><path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/></svg>',
+        2.4rem,
+        2.4rem
+      );
+
+      @include media-breakpoint-up(md) {
+        display: block;
+        min-width: 4rem !important;
+      }
+    }
+  }
+}
