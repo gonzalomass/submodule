@@ -1,11 +1,11 @@
-name: Staging CD
+name: staging cd to parent
 
 on:
   push:
     branches: [ staging ]
 
 jobs:
-  staging_automated_cd:
+  staging_cd_to_parent:
     runs-on: ubuntu-latest
     steps:
     # Checkout parent repo
