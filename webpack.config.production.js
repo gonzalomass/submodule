@@ -101,9 +101,9 @@ module.exports = {
 					{
 						loader: 'eslint-loader',
 						options: {
-							failOnError: true,
+							failOnError: false,
 							fix: false,
-							emitWarning: true
+							emitError: true
 						}
 					}
 				]
@@ -231,7 +231,7 @@ module.exports = {
 		new StyleLintPlugin({
 			files: 'assets/scss/**/*.s?(a|c)ss',
 			fix: false,
-			failOnError: true,
+			failOnError: false,
 			syntax: 'scss'
 		}),
 		new MiniCssExtractPlugin({

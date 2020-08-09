@@ -101,8 +101,9 @@ module.exports = {
 					{
 						loader: 'eslint-loader',
 						options: {
+							failOnError: false,
 							fix: false,
-							emitWarning: true
+							emitError: true
 						}
 					}
 				]
