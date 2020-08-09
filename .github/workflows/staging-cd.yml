@@ -5,7 +5,7 @@ on:
     branches: [ staging ]
 
 jobs:
-  automated_submodule_update:
+  staging_automated_cd:
     runs-on: ubuntu-latest
     steps:
     # Checkout parent repo
