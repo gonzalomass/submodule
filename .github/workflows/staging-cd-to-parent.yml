@@ -14,7 +14,7 @@ jobs:
       with:
         repository: gonzalomass/parent
         ref: staging
-        token: ${{ secrets.PAT }}
+        token: ${{ github.token }}
         path: main
         submodules: true
 
