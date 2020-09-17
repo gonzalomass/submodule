@@ -36,5 +36,5 @@ jobs:
         git commit -m "${{ github.event.head_commit.message }}"
         git checkout -b staging-sub-update
         git push origin staging-sub-update:staging-sub-update
-        gh pr create -B staging -f -l automerge
+        gh pr create -B staging -f
         gh pr merge staging-sub-update -m
