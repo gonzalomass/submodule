@@ -40,9 +40,14 @@ jobs:
         git fetch
         gh pr status
         TIMEOUT=0
-        until [ $TIMEOUT -eq 20 ] || gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "Checks passing"
+        until [ gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "Checks passing"
         do
           sleep 1
-          echo $((TIMEOUT++))
+          if [ $TIMEOUT -eq 20 ] || gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "Checks failing" ]
+          then
+            print "ERROR: check failing" >&2
+            exit 2
+          fi
+          print $((TIMEOUT++))
         done
         gh pr merge staging-sub-update -m
