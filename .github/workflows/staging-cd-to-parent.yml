@@ -38,4 +38,5 @@ jobs:
         git push origin staging-sub-update:staging-sub-update
         gh pr create -B staging -f
         sleep 5
+        git fetch
         gh pr merge staging-sub-update -m
