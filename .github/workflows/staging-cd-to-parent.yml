@@ -23,12 +23,20 @@ jobs:
       run: |
         git config --global user.name github-actions
         git config --global user.email github-actions@github.com
+        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+        sudo apt-add-repository -u https://cli.github.com/packages
+        sudo apt install gh
+        gh auth login --with-token ${{ secrets.PAT }}
         cd main/sub
         git remote update
         git fetch
         git checkout -b staging
         git pull origin staging --rebase
+        git checkout -b staging-sub-update
+        git pull origin staging --rebase
         cd ..
         git add sub
         git commit -m "${{ github.event.head_commit.message }}"
         git push
+        gh pr create -B staging -f -l automerge
+        gh pr merge staging-sub-update -m
