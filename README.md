@@ -1,3 +1,2 @@
 # submodule
-test release change
-revert token
+test CD pr with review required at parent staging branch
