@@ -29,8 +29,6 @@ jobs:
         cd main/sub
         git remote update
         git fetch
-        git checkout -b staging
-        git pull origin staging --rebase
         git checkout -b staging-sub-update
         git pull origin staging --rebase
         cd ..
