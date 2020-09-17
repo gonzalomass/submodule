@@ -23,7 +23,9 @@ jobs:
       run: |
         git config --global user.name github-actions
         git config --global user.email github-actions@github.com
-        gh auth login --with-token < ${{ secrets.PAT }}
+        echo -n ${{ secrets.PAT }} >> token.txt
+        gh auth login --with-token < token.txt
+        rm token.txt
         cd main/sub
         git remote update
         git fetch
