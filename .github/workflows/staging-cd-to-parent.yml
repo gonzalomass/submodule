@@ -37,4 +37,4 @@ jobs:
         git checkout -b staging-sub-update
         git push origin staging-sub-update:staging-sub-update
         gh pr create -B staging -f
-        gh pr merge staging -m
+        gh pr merge staging-sub-update -m
