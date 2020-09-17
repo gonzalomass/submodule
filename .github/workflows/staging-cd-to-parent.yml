@@ -23,6 +23,7 @@ jobs:
       run: |
         git config --global user.name github-actions
         git config --global user.email github-actions@github.com
+        gh auth login --with-token < ${{ secrets.PAT }}
         cd main/sub
         git remote update
         git fetch
