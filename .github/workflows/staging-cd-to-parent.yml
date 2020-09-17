@@ -23,9 +23,6 @@ jobs:
       run: |
         git config --global user.name github-actions
         git config --global user.email github-actions@github.com
-        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-        sudo apt-add-repository -u https://cli.github.com/packages
-        sudo apt install gh
         gh auth login --with-token ${{ secrets.PAT }}
         cd main/sub
         git remote update
