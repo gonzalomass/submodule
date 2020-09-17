@@ -39,4 +39,6 @@ jobs:
         gh pr create -B staging -f
         sleep 5
         git fetch
+        gh pr status
+        until gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "Checks passing"; do sleep 1; done
         gh pr merge staging-sub-update -m
