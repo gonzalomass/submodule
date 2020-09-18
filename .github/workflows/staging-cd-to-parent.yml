@@ -50,5 +50,6 @@ jobs:
           echo "checks passing" ;
           gh pr merge staging-sub-update -m
         else
+          gh pr close staging-sub-update -d
           echo "checks failing, not present or timeout" ; exit 2 ;
         fi
