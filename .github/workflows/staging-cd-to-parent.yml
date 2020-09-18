@@ -45,7 +45,10 @@ jobs:
           sleep 1
           echo $((TIMEOUT++))
         done
-        if gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "failing"; then
-          echo "checks failing" ; exit 2 ;
+        if gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "passing";
+        then
+          echo "checks passing" ;
+          gh pr merge staging-sub-update -m
+        else
+          echo "checks failing, not present or timeout" ; exit 2 ;
         fi
-        gh pr merge staging-sub-update -m
