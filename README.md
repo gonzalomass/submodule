@@ -1,2 +1,2 @@
 # submodule
-test release change
+checks test
