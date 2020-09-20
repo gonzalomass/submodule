@@ -1,2 +1,2 @@
 # submodule
-chacks passing
+check
