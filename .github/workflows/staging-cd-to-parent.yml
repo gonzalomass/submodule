@@ -21,7 +21,7 @@ jobs:
     # Update submodule
     - name: Update submodule
       run: |
-        echo ${{ github.event }}
+        echo "$GITHUB_CONTEXT"
         git config --global user.name github-actions
         git config --global user.email github-actions@github.com
         echo -n ${{ secrets.PAT }} >> token.txt
