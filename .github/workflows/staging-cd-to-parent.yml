@@ -18,6 +18,11 @@ jobs:
         path: main
         submodules: true
 
+    - name : GITHUB CONTEXT
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+
     # Update submodule
     - name: Update submodule
       run: |
