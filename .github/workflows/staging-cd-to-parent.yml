@@ -27,8 +27,8 @@ jobs:
     - name: Update submodule
       run: |
         echo "$GITHUB_CONTEXT"
-        git config --global user.name github-actions
-        git config --global user.email github-actions@github.com
+        git config --global user.name ${{ github.event.head_commit.author.username }}
+        git config --global user.email ${{ github.event.head_commit.author.email }}
         echo -n ${{ secrets.PAT }} >> token.txt
         gh auth login --with-token < token.txt
         rm token.txt
@@ -54,7 +54,12 @@ jobs:
         if gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "passing";
         then
           echo "checks passing" ;
-          gh pr merge staging-sub-update -m
+          unti git merge staging-sub-update
+          do
+            sleep 1
+            echo "trying to merge"
+          done
+          git branch -d staging-sub-update;
         else
           gh pr close staging-sub-update -d
           echo "checks failing, not present or timeout" ; exit 2 ;
