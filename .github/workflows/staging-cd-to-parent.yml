@@ -42,7 +42,7 @@ jobs:
         git commit -m "${{ github.event.head_commit.message }}"
         git checkout -b staging-sub-update
         git push origin staging-sub-update:staging-sub-update
-        gh pr create -B staging -f
+        gh pr create -B staging -t "${{ github.event.head_commit.message }}" -b "update submodule by ${{ github.actor }} with commit ${{ github.event.head_commit.id }}"
         git fetch
         gh pr status
         TIMEOUT=0
