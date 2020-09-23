@@ -42,7 +42,7 @@ jobs:
         git commit --author="${{ github.event.head_commit.author.username }} <${{ github.event.head_commit.author.email }}>" -m "${{ github.event.head_commit.message }}"
         git checkout -b staging-sub-update
         git push origin staging-sub-update:staging-sub-update
-        gh pr create -B staging -t "update at ${{ github.repository }} by ${{ github.actor }}" -b "${{ github.event.head_commit.message }} \n commit ${{ github.event.head_commit.id }}"
+        gh pr create -B staging -a ${{ github.event.head_commit.author.username }} -t "update at ${{ github.repository }} by ${{ github.actor }}" -b "${{ github.event.head_commit.message }}"
         git fetch
         gh pr status
         TIMEOUT=0
