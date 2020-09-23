@@ -54,7 +54,7 @@ jobs:
         if gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "passing";
         then
           echo "checks passing" ;
-          unti git merge staging-sub-update
+          until git merge staging-sub-update
           do
             sleep 1
             echo "trying to merge"
