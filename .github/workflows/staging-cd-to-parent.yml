@@ -59,6 +59,7 @@ jobs:
             sleep 1
             echo "trying to merge"
           done
+          git checkout staging
           git branch -d staging-sub-update;
         else
           gh pr close staging-sub-update -d
