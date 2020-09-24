@@ -54,12 +54,13 @@ jobs:
         if gh pr status | grep -A2 "Current branch" | tail -n1 | grep -q "passing";
         then
           echo "checks passing" ;
+          git checkout staging
           until git merge staging-sub-update
           do
             sleep 1
             echo "trying to merge"
           done
-          git checkout staging
+          git push origin staging staging-sub-update
           git branch -d staging-sub-update;
         else
           gh pr close staging-sub-update -d
