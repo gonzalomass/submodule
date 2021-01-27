@@ -21,16 +21,19 @@ jobs:
           fetch-depth: '0'
 
       - name: Build
+        id: build
         run: |
           npm install
           npm run build
           zip submodule-build
 
       - name: Bump version and push tag
+        id: bump_tag
         uses: anothrNick/github-tag-action@1.26.0
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
           WITH_V: true
+          RELEASE_BRANCHES: master
 
       - name: Create Release
         id: create_release
