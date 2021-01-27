@@ -1,2 +1,4 @@
-# submodule
-test release change
+# Auto Tag
+* #major
+* #minor
+* #patch
