@@ -20,13 +20,6 @@ jobs:
         with:
           fetch-depth: '0'
 
-      - name: Build
-        id: build
-        run: |
-          npm install
-          npm run build
-          zip submodule-build
-
       - name: Bump version and push tag
         id: bump_tag
         uses: anothrNick/github-tag-action@1.26.0
@@ -48,6 +41,13 @@ jobs:
             ${{ github.event.head_commit.message }}
           draft: false
           prerelease: false
+
+      - name: Build
+        id: build
+        run: |
+          npm install
+          npm run build
+          zip -r submodule-build.zip ./*
 
       - name: Upload Release Asset
         id: upload-release-asset 
