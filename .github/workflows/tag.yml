@@ -25,8 +25,8 @@ jobs:
           WITH_V: true
 
       - name: Update readme
-        - uses: pocket-apps/action-update-version@v1
-          with:
-            files: 'README.md'
-            version-regexp: '\d+.\d+.\d+'
-            repo-token: ${{ secrets.PAT }}
+        uses: pocket-apps/action-update-version@v1
+        with:
+          files: 'README.md'
+          version-regexp: '\d+.\d+.\d+'
+          repo-token: ${{ secrets.PAT }}
