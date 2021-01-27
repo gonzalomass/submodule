@@ -47,7 +47,7 @@ jobs:
         run: |
           npm install
           npm run build
-          zip -r submodule-build.zip ./*
+          zip -r submodule-build.zip ./* -x "**/node_modules/*" -x "**/.git/*"
 
       - name: Upload Release Asset
         id: upload-release-asset 
