@@ -38,11 +38,11 @@ jobs:
         run: |
           npm install
           npm run build
-          zip -r submodule-build.zip ./* -x node_modules/\*
+          zip -r submodule-build-${{ github.ref }}.zip ./* -x node_modules/\*
 
       - name: Log
         run: |
-          echo ${{ steps.create_release.outputs }}
+          echo ${{ steps.create_release.outputs.upload_url }}
 
       - name: Upload Release Asset
         id: upload-release-asset 
