@@ -23,8 +23,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
           WITH_V: true
-          RELEASE_BRANCHES: master
-
-      - name: Log
-        run: |
-          echo ${{ steps.bump_tag.tag }}
