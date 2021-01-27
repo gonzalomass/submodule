@@ -33,16 +33,20 @@ jobs:
           draft: false
           prerelease: false
 
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+
       - name: Build
         id: build
         run: |
           npm install
           npm run build
-          zip -r submodule-build-${{ github.ref }}.zip ./* -x node_modules/\*
+          zip -r submodule-build-${{ steps.get_version.outputs.VERSION }}.zip ./* -x node_modules/\*
 
       - name: Log
         run: |
-          echo ${{ steps.create_release.outputs.upload_url }}
+          echo ${{ steps.get_version.outputs.VERSION }}
 
       - name: Upload Release Asset
         id: upload-release-asset 
@@ -51,6 +55,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./submodule-build-${{ github.ref }}.zip
-          asset_name: submodule-build-${{ github.ref }}.zip
+          asset_path: ./submodule-build-${{ steps.get_version.outputs.VERSION }}.zip
+          asset_name: submodule-build-${{ steps.get_version.outputs.VERSION }}.zip
           asset_content_type: application/zip
