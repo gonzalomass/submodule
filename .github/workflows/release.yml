@@ -24,7 +24,7 @@ jobs:
         run: |
           npm install
           npm run build
-          zip --junk-paths submodule-build README.md
+          zip submodule-build
 
       - name: Bump version and push tag
         uses: anothrNick/github-tag-action@1.26.0
