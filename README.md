@@ -1,7 +1,7 @@
-# Convetional Commits
-* fix(pencil): stop graphite breaking when too much pressure applied	*Patch Release*
-* feat(pencil): add 'graphiteWidth' option	*Minor Release*
-* perf(pencil): BREAKING CHANGE: The graphiteWidth option has been removed. The default graphite width of 10mm is always used for performance reasons.	*Major Release*
+# Convetional Commit Prefixes for Tag Bump
+* fix:, build:, chore:, ci:, docs:, style:, refactor:, perf:, test: *Patch Release*
+* feat: *Minor Release*
+* BREAKING CHANGE: *Major Release* *PLEAS NOTE THIS IS A PREFIX FOR THE FOOTER OR DESCRIPTION OF THE COMMIT, NOT FOR THE TITLE ITSELF, REQUIRES A LINE BREAK*
 
 7
 
