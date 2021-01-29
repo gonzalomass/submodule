@@ -2,6 +2,6 @@
   "name": "gonzalomass/submodule",
   "description": "A submodule publishing exercise",
   "require": {
-    "php": ">=7.1",
+    "php": ">=7.1"
   }
 }
