@@ -2,12 +2,12 @@
 Reference: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ## Commit Pattern
-TICKET: REPO: SEMANTIC VERSIONING PREFIX: DESCRIPTION <br>
+SEMANTIC VERSIONING PREFIX: TICKET: REPO: DESCRIPTION <br>
 FOOTER
 
 Example:
 
-> FREE-3124: GUI: feat: re-build left navigation index <br>
+> feat: FREE-3124: GUI: re-build left navigation index <br>
 > BEAKING CHANGE: use react in order to re-build the left navigation index
 
 ## Semantic Versioning Prefixes for Tag Bumping
@@ -28,11 +28,11 @@ Reference: [GitHub Tag Action](https://github.com/marketplace/actions/github-tag
 
 ## Commit Examples
 Patch Example:
-> FREE-3122: GUI: fix: left navigation margin
+> fix: FREE-3122: GUI: left navigation margin
 
 Minor Example:
-> FREE-3123: GUI: feat: auto-populate left navigation index
+> feat: FREE-3123: GUI: auto-populate left navigation index
 
 Major Example: 
-> FREE-3124: GUI: feat: re-build left navigation index <br>
+> feat: FREE-3124: GUI: re-build left navigation index <br>
 > BEAKING CHANGE: use react in order to re-build the left navigation index
