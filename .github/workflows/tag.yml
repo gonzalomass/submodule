@@ -19,6 +19,7 @@ jobs:
 
       - name: Bump tag
         id: bump_tag
-        uses: hennejg/github-tag-action@v4.1.jh1
-        with:
-          github_token: ${{ secrets.PAT }}
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+          WITH_V: true
