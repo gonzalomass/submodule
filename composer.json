@@ -1,0 +1,7 @@
+{
+  "name": "gonzalomass/submodule",
+  "description": "A submodule publishing exercise",
+  "require": {
+    "php": ">=7.1"
+  }
+}
