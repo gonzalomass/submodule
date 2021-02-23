@@ -36,4 +36,3 @@ Minor Example:
 Major Example: 
 > feat: FREE-3124: GUI: re-build left navigation index <br>
 > BEAKING CHANGE: use react in order to re-build the left navigation index
-
