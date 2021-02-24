@@ -37,4 +37,4 @@ Major Example:
 > feat: FREE-3124: GUI: re-build left navigation index <br>
 > BEAKING CHANGE: use react in order to re-build the left navigation index
 
-this change should do nothing, only
+diff was calculated  correctly, lets check with a minor
