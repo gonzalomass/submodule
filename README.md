@@ -33,8 +33,8 @@ Patch Example:
 Minor Example:
 > feat: FREE-3123: GUI: auto-populate left navigation index
 
-Major Example: 
+Major Example:
 > feat: FREE-3124: GUI: re-build left navigation index <br>
 > BEAKING CHANGE: use react in order to re-build the left navigation index
 
-staging flow 2
+second minor commit
