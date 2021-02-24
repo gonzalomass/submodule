@@ -15,12 +15,11 @@ jobs:
       - uses: actions/checkout@v2
       - name: Bump version and push tag
         id: tag_version
-        uses: mathieudutour/github-tag-action@v5.2
+        uses: onpointglobal/github-tag-action@cac2a7e76bf0c4a7f366a08b8a5460e60af528c4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pre_release_branches: staging
           append_to_pre_release_tag: prerelease
-          default_bump: false
 
       - name: Create a GitHub release
         id: create_release
